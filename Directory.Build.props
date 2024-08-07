@@ -1,0 +1,29 @@
+﻿<Project>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!--NoWarn:
+    - CS1591: Missing XML comment for publicly visible type or member
+    - SA1122: Use string.Empty for empty strings
+    - SA1600: Elements should be documented
+    - SA1601: Partial elements should be documented
+    - SA1602: Enumeration items should be documented
+    -->
+    <NoWarn>$(NoWarn);CS1591;SA1122;SA1600;SA1601;SA1602</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Using Include="System.Collections.Immutable" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!--
+      Enable build acceleration.
+      See https://devblogs.microsoft.com/visualstudio/vs-toolbox-accelerate-your-builds-of-sdk-style-net-projects/
+    -->
+    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+  </PropertyGroup>
+</Project>

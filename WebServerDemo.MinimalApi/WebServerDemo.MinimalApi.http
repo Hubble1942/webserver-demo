@@ -1,6 +1,6 @@
-@WebServerDemo.MinimalApi_HostAddress = http://localhost:5122
+@WebServerDemo_MinimalApi_HostAddress = http://localhost:5122
 
-GET {{WebServerDemo.MinimalApi_HostAddress}}/weatherforecast/
+GET {{WebServerDemo_MinimalApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
