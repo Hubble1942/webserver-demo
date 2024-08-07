@@ -1,11 +1,9 @@
-@WebServerDemo_MinimalApi_HostAddress = http://localhost:5122
-
-GET {{WebServerDemo_MinimalApi_HostAddress}}/beer/
+GET {{HostAddress}}/beer/
 Accept: application/json
 
 ###
 
-POST {{WebServerDemo_MinimalApi_HostAddress}}/beer/
+POST {{HostAddress}}/beer/
 Content-Type: application/json
 
 {
@@ -15,4 +13,4 @@ Content-Type: application/json
 
 ###
 
-DELETE {{WebServerDemo_MinimalApi_HostAddress}}/beer/Eichhof%20Braugold
+DELETE {{HostAddress}}/beer/Eichhof%20Braugold
