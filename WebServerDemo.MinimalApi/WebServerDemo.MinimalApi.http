@@ -1,6 +1,18 @@
 @WebServerDemo_MinimalApi_HostAddress = http://localhost:5122
 
-GET {{WebServerDemo_MinimalApi_HostAddress}}/weatherforecast/
+GET {{WebServerDemo_MinimalApi_HostAddress}}/beer/
 Accept: application/json
 
 ###
+
+POST {{WebServerDemo_MinimalApi_HostAddress}}/beer/
+Content-Type: application/json
+
+{
+    "name": "Eichhof Braugold",
+    "alcoholByVolume": 0.052
+}
+
+###
+
+DELETE {{WebServerDemo_MinimalApi_HostAddress}}/beer/Eichhof%20Braugold
