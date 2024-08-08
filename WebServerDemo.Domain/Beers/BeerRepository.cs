@@ -6,7 +6,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace WebServerDemo.MinimalApi.Beers;
+namespace WebServerDemo.Domain.Beers;
 
 public sealed class BeerRepository
 {

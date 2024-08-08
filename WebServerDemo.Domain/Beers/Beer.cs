@@ -6,6 +6,6 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace WebServerDemo.MinimalApi.Beers;
+namespace WebServerDemo.Domain.Beers;
 
 public sealed record Beer(string Name, double AlcoholByVolume) { }

@@ -6,7 +6,10 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace WebServerDemo.MinimalApi.Beers;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
+
+namespace WebServerDemo.Domain.Beers;
 
 public static class EndpointRouteBuilderExtensions
 {

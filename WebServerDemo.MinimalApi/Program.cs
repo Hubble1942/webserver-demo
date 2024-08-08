@@ -6,7 +6,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using WebServerDemo.MinimalApi.Beers;
+using WebServerDemo.Domain.Beers;
 
 var builder = WebApplication.CreateBuilder(args);
 
