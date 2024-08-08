@@ -8,7 +8,7 @@
 
 using WebServerDemo.Domain;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateSlimBuilder(args);
 
 builder.Services.AddDomainForTrimmedApps();
 
