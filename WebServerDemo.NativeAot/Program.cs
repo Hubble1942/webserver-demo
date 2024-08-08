@@ -10,7 +10,7 @@ using WebServerDemo.Domain;
 
 var builder = WebApplication.CreateSlimBuilder(args);
 
-builder.Services.AddDomain();
+builder.Services.AddDomainForTrimmedApps();
 
 var app = builder.Build();
 
