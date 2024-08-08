@@ -7,13 +7,27 @@
 // -----------------------------------------------------------------------
 
 using Microsoft.Extensions.DependencyInjection;
+using WebServerDemo.Domain.Beers;
 
-namespace WebServerDemo.Domain.Beers;
+namespace WebServerDemo.Domain;
 
 public static class ServiceCollectionExtensions
 {
-    public static void AddBeers(this IServiceCollection services)
+    public static void AddDomain(this IServiceCollection services)
     {
         services.AddSingleton<BeerRepository>();
+    }
+
+    public static void AddDomainForAot(this IServiceCollection services)
+    {
+        services.ConfigureHttpJsonOptions(options =>
+        {
+            options.SerializerOptions.TypeInfoResolverChain.Insert(
+                0,
+                DomainJsonSerializerContext.Default
+            );
+        });
+
+        services.AddDomain();
     }
 }

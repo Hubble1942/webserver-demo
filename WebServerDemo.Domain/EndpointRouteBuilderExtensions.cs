@@ -8,22 +8,26 @@
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
+using WebServerDemo.Domain.Beers;
 
-namespace WebServerDemo.Domain.Beers;
+namespace WebServerDemo.Domain;
 
 public static class EndpointRouteBuilderExtensions
 {
-    private const string RoutePrefix = "/beer";
-
-    public static void MapBeers(this IEndpointRouteBuilder app)
+    public static void MapDomain(this IEndpointRouteBuilder app)
     {
-        app.MapGet(RoutePrefix, (BeerRepository repository) => repository.All);
-        app.MapPost(RoutePrefix, (Beer beer, BeerRepository repository) => repository.Add(beer));
-        app.MapDelete(
-            RouteTemplate("{name}"),
+        app.MapBeers();
+    }
+
+    private static void MapBeers(this IEndpointRouteBuilder app)
+    {
+        var beerApi = app.MapGroup("/beer");
+
+        beerApi.MapGet("/", (BeerRepository repository) => repository.All);
+        beerApi.MapPost("/", (Beer beer, BeerRepository repository) => repository.Add(beer));
+        beerApi.MapDelete(
+            "/{name}",
             (string name, BeerRepository repository) => repository.DeleteByName(name)
         );
     }
-
-    private static string RouteTemplate(string postfix) => $"{RoutePrefix}/{postfix}";
 }

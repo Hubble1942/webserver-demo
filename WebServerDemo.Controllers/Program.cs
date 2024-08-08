@@ -6,11 +6,11 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using WebServerDemo.Domain.Beers;
+using WebServerDemo.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddBeers();
+builder.Services.AddDomain();
 
 builder.Services.AddControllers();
 
