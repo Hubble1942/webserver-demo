@@ -15,9 +15,9 @@ public static class EndpointRouteBuilderExtensions
 {
     private const string RoutePrefix = "/beer";
 
-    public static void MapBeer(this IEndpointRouteBuilder app)
+    public static void MapBeers(this IEndpointRouteBuilder app)
     {
-        app.MapGet(RoutePrefix, (BeerRepository repository) => repository.All.OrderBy(b => b.Name));
+        app.MapGet(RoutePrefix, (BeerRepository repository) => repository.All);
         app.MapPost(RoutePrefix, (Beer beer, BeerRepository repository) => repository.Add(beer));
         app.MapDelete(
             RouteTemplate("{name}"),

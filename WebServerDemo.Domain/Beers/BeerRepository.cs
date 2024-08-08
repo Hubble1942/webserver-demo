@@ -17,7 +17,7 @@ public sealed class BeerRepository
         new("Calanda", 0.048),
     ];
 
-    public IEnumerable<Beer> All => this.store;
+    public IEnumerable<Beer> All => this.store.OrderBy(b => b.Name);
 
     public void Add(Beer beer) => this.store.Add(beer);
 
