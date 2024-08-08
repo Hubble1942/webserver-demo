@@ -15,11 +15,6 @@ public static class ServiceCollectionExtensions
 {
     public static void AddDomain(this IServiceCollection services)
     {
-        services.AddSingleton<BeerRepository>();
-    }
-
-    public static void AddDomainForAot(this IServiceCollection services)
-    {
         services.ConfigureHttpJsonOptions(options =>
         {
             options.SerializerOptions.TypeInfoResolverChain.Insert(
@@ -28,6 +23,6 @@ public static class ServiceCollectionExtensions
             );
         });
 
-        services.AddDomain();
+        services.AddSingleton<BeerRepository>();
     }
 }
